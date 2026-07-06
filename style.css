@@ -8,30 +8,43 @@ body{
     min-height: 100vh;
 }
 .calculator{
-    width: 400px; ;
-    height: 400px;
+    width: 380px;
+    height: 425px;
     padding: 25px;
-    background-color:rgb(46, 46, 46);
+    background-color:#5A5C68;
     border-radius:15px ;
 }
 .screen{
-    width:350px ;
-    height: 30px;
+    width:330px ;
+    height: 70px;
     font-size: 25px;
     text-align: right;
     padding: 25px;
-    margin-bottom: 20px; 
-    background-color: rgb(181, 222, 181);
+    margin-bottom: 25px; 
+    background-color: #C9DCA7;
     border-radius: 15px;
 }
 .buttons{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 20px;
-    height: 270px;
+    gap: 8px;
+    height: 280px;
 }
 .buttons button{
-    font-size: 25px;
+    font-size: 50px;
     border-radius: 25%;
+    font-weight: 600;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.numbers{
+    background-color: #3D4049;
+    color: #FDFDFE;
+}
+.operations{
+    background-color: #BDC2C5;
+    color: #FDFDFE;
 }
