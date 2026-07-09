@@ -8,6 +8,11 @@ body{
     min-height: 100vh;
     margin: 0;
 }
+.app{
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
 .calculator{
     width: 380px;
     height: 475px;
@@ -51,4 +56,32 @@ body{
 }
 .equals{
     grid-row: span 3;
+}
+
+.history {
+    width: 220px;
+    min-height: 475px;
+    background-color: #5A5C68;
+    border-radius: 15px;
+    padding: 20px;
+}
+.history h3{
+    color: white;
+    margin-top: 0;
+    text-align: center;
+}
+.history-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 380px;
+    overflow-y: auto;
+}
+.history-list li {
+    background-color: #3D4049;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 16px;
 }

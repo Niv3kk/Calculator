@@ -1,10 +1,12 @@
 const screen = document.querySelector(".screen");
 const buttons = document.querySelectorAll("button");
+const historyList = document.querySelector(".history-list")
 
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 let resultShow = false;
+let history = [];
 
 for (let i = 0; i < buttons.length; i++) {
     const button = buttons[i];
@@ -21,7 +23,6 @@ for (let i = 0; i < buttons.length; i++) {
         }
     });
 }
-
 
 function handleNumber(value) {
     if (resultShow) {
@@ -90,6 +91,8 @@ function handleEquales(){
     const num2 = Number(secondNumber);
 
     const result = calculate(num1, num2, operator);
+    const operationsText = `${firstNumber} ${operator}${secondNumber} = ${result}`;
+    saveHistory(operationsText);
 
     screen.value = result;
 
@@ -98,7 +101,20 @@ function handleEquales(){
     operator = "";
     resultShow = true;
 }
+function saveHistory(operationsText){
+    history.push(operationsText);
+    showHistory();
 
+}
+function showHistory() {
+    historyList.innerHTML = "";
+
+    for (let i = 0; i < history.length; i++) {
+        const item = document.createElement("li");
+        item.textContent = history[i];
+        historyList.appendChild(item);
+    }
+}
 
 
 
