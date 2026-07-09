@@ -63,11 +63,12 @@ body{
     min-height: 475px;
     background-color: #5A5C68;
     border-radius: 15px;
-    padding: 20px;
+    padding: 10px;
 }
 .history h3{
     color: white;
     margin-top: 0;
+    margin-bottom: 5px;
     text-align: center;
 }
 .history-list{
@@ -84,4 +85,12 @@ body{
     border-radius: 8px;
     margin-bottom: 8px;
     font-size: 16px;
+}
+.clear-history{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
 }

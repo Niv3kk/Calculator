@@ -1,6 +1,7 @@
 const screen = document.querySelector(".screen");
 const buttons = document.querySelectorAll("button");
 const historyList = document.querySelector(".history-list")
+const clearHistoryBotton = document.querySelector(".clear-history")
 
 let firstNumber = "";
 let secondNumber = "";
@@ -23,6 +24,8 @@ for (let i = 0; i < buttons.length; i++) {
         }
     });
 }
+
+clearHistoryBotton.addEventListener("click", clearHistory);
 
 function handleNumber(value) {
     if (resultShow) {
@@ -103,6 +106,7 @@ function handleEquales(){
 }
 function saveHistory(operationsText){
     history.push(operationsText);
+    localStorage.setItem("calculatorHistory",JSON.stringify(history));
     showHistory();
 
 }
@@ -115,7 +119,20 @@ function showHistory() {
         historyList.appendChild(item);
     }
 }
+function loadHistory(){
+    const saveHistory = localStorage.getItem("calculatorHistory");
+    if(saveHistory != null){
+        history = JSON.parse(saveHistory);
+        showHistory();
+    }
+}
 
+function clearHistory(){
+    history = [];
+    localStorage.removeItem("calculatorHistory")
+    showHistory();
+}
+loadHistory();
 
 
 
